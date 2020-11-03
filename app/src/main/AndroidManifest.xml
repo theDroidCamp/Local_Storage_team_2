@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Local_Storage_team_2">
-        <activity android:name=".LogutActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".LogutActivity" />
         <activity android:name=".SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
