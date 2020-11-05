@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Local_Storage_team_2</string>
     <string name="create_an_account_tv">Create an account</string>
+    <string name="email_address">Email Address</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
 </resources>
