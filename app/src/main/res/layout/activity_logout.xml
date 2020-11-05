@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogutActivity">
+    tools:context=".LogoutActivity">
 
 
 
@@ -14,35 +14,102 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="28sp"
+            android:layout_marginTop="100dp"
             android:text="@string/user_details_tv"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:fontFamily="casual">
+            android:fontFamily="@font/roboto_bold">
 
         </com.google.android.material.textview.MaterialTextView>
 
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/name_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/user_details_tv"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="">
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text=""
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toBottomOf="@id/user_details_tv">
 
-        </com.google.android.material.textview.MaterialTextView>
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/email_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text=""
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mail_box"
+        app:layout_constraintTop_toBottomOf="@id/name_tv">
+
+    </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/school_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text=""
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/name_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="">
+        app:layout_constraintStart_toEndOf="@id/school_icon"
+        app:layout_constraintTop_toBottomOf="@id/email_tv">
 
     </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_logout"
+        android:layout_width="253dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/school_tv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/logout_btn"
+        android:background="@drawable/button_rounded_corner"
+        android:layout_gravity="center_horizontal"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_details_tv"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mail_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar"
+        app:srcCompat="@drawable/ic_baseline_mail_24" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/school_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mail_box"
+        app:srcCompat="@drawable/ic_baseline_school_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
