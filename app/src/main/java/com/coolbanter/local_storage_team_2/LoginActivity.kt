@@ -27,17 +27,20 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener {
             savedata()
+
+            //This will change the current screen to another screen
             val intent = Intent(this, LogutActivity::class.java)
             LogutActivity(intent)
         }
     }
-
+        //To save data with shared preference
     private fun savedata() {
+            //If field is empty will show (Input email address)
         if (binding.testFieldEditTest.text!!.isEmpty()) {
             binding.testFieldEditTest.error = "Input your email address!!"
             return
         }
-
+            //If field is empty will show (Password is empty)
         if (binding.passwordEdit.text!!.isEmpty()) {
             binding.passwordEdit.error = "Password is empty!"
             return
@@ -51,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
         editor.putString("password", binding.passwordEdit.text.toString())
 
     }
-
+            //To retrieve data with shared preference
     private fun retrievedata() {
         val mypref = getSharedPreferences("mypref", Context.MODE_PRIVATE)
 
