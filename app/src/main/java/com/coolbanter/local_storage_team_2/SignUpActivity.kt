@@ -24,8 +24,9 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(view)
 
 
-        binding.btnLogin.setOnClickListener {
 
+
+        binding.btnLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
@@ -40,9 +41,10 @@ class SignUpActivity : AppCompatActivity() {
         binding.btnSignUp.setOnClickListener {
             saveData()
 
+
         }
     }
-            private fun saveData() {
+             private fun saveData() {
                 if (name.text.isEmpty()) {
                     name.error = "Please enter your name"
                     return
@@ -65,17 +67,30 @@ class SignUpActivity : AppCompatActivity() {
 
                 val editor = mypref.edit()
 
-                editor.putString("name", name.text.toString())
-                editor.putString("email", emailAddress.text.toString())
-                editor.putString("school", schoolName.text.toString())
-                editor.putString("password", password.text.toString())
+                 if (name.text.toString().isNotEmpty() &&
+                         emailAddress.text.toString().isNotEmpty() &&
+                         schoolName.text.toString().isNotEmpty() &&
+                         password.text.toString().isNotEmpty()) {
 
-                editor.apply()
+                     editor.putString("name", name.text.toString())
+                     editor.putString("email", emailAddress.text.toString())
+                     editor.putString("school", schoolName.text.toString())
+                     editor.putString("password", password.text.toString())
 
-                Toast.makeText(this, "Sign up successful, please login", Toast.LENGTH_LONG).show()
+                     editor.apply()
+                     startActivity(Intent(this, LoginActivity::class.java))
+                     Toast.makeText(this, "Sign up successful, please login", Toast.LENGTH_LONG).show()
+                 }
+
+
+
+
 
 //                val intent = Intent(this, LoginActivity::class.java)
 //                startActivity(intent)
 //                finish()
             }
+
+//
+//    }
 }
