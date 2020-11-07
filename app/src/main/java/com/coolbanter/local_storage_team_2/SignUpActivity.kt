@@ -12,10 +12,10 @@ import com.coolbanter.local_storage_team_2.databinding.ActivitySignUpBinding
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySignUpBinding
 
-    lateinit var name_et: EditText
-    lateinit var email_address_et: EditText
-    lateinit var school_name_et: EditText
-    lateinit var password_et: EditText
+    private lateinit var name: EditText
+    private lateinit var emailAddress: EditText
+    private lateinit var schoolName: EditText
+    private lateinit var password: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +30,10 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        name_et = binding.nameEt
-        email_address_et = binding.emailAddressEt
-        school_name_et = binding.schoolNameEt
-        password_et = binding.passwordEt
+        name = binding.nameEt
+        emailAddress = binding.emailAddressEt
+        schoolName = binding.schoolNameEt
+        password = binding.passwordEt
 
 
 
@@ -43,21 +43,21 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
             private fun saveData() {
-                if (name_et.text.isEmpty()) {
-                    name_et.error = "Please enter your name"
+                if (name.text.isEmpty()) {
+                    name.error = "Please enter your name"
                     return
                 }
-                if (email_address_et.text.isEmpty()) {
-                    email_address_et.error = "Please enter your email address"
+                if (emailAddress.text.isEmpty()) {
+                    emailAddress.error = "Please enter your email address"
                     return
                 }
-                if (school_name_et.text.isEmpty()) {
-                    school_name_et.error = "Please enter the name of your school"
+                if (schoolName.text.isEmpty()) {
+                    schoolName.error = "Please enter the name of your school"
                     return
                 }
 
-                if (password_et.text.isEmpty()) {
-                    password_et.error = "Please enter password"
+                if (password.text.isEmpty()) {
+                    password.error = "Please enter password"
                     return
                 }
 
@@ -65,10 +65,10 @@ class SignUpActivity : AppCompatActivity() {
 
                 val editor = mypref.edit()
 
-                editor.putString("name", name_et.text.toString())
-                editor.putString("email", email_address_et.text.toString())
-                editor.putString("school", school_name_et.text.toString())
-                editor.putString("password", password_et.text.toString())
+                editor.putString("name", name.text.toString())
+                editor.putString("email", emailAddress.text.toString())
+                editor.putString("school", schoolName.text.toString())
+                editor.putString("password", password.text.toString())
 
                 editor.apply()
 

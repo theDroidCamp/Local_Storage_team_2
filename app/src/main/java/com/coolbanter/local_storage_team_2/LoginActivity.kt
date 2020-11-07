@@ -1,5 +1,6 @@
 package com.coolbanter.local_storage_team_2
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,8 +17,8 @@ class LoginActivity : AppCompatActivity() {
             
         
 
-      binding.loginButton.setOnClickListener {
-            savedata()
+      binding.btnLogin.setOnClickListener {
+            saveData()
 
             //This will change the current screen to another screen
             startActivity(Intent(this, LogoutActivity::class.java))
@@ -25,15 +26,15 @@ class LoginActivity : AppCompatActivity() {
         }
     }
         //To save data with shared preference
-    private fun savedata() {
+    private fun saveData() {
             //If field is empty will show (Input email address)
-        if (binding.testFieldEditTest.text!!.isEmpty()) {
-            binding.testFieldEditTest.error = "Input your email address!!"
+        if (binding.emailAddressEt.text!!.isEmpty()) {
+            binding.emailAddressEt.error = "Input your email address!!"
             return
         }
             //If field is empty will show (Password is empty)
-        if (binding.passwordEdit.text!!.isEmpty()) {
-            binding.passwordEdit.error = "Password is empty!"
+        if (binding.passwordEt.text!!.isEmpty()) {
+            binding.passwordEt.error = "Password is empty!"
             return
         }
 
@@ -41,8 +42,8 @@ class LoginActivity : AppCompatActivity() {
 
         val editor = mypref.edit()
 
-        editor.putString("name", binding.testFieldEditTest.text.toString())
-        editor.putString("password", binding.passwordEdit.text.toString())
+        editor.putString("name", binding.emailAddressEt.text.toString())
+        editor.putString("password", binding.emailAddressEt.text.toString())
 
     }
             //To retrieve data with shared preference
@@ -53,5 +54,5 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-    }
+
 }
