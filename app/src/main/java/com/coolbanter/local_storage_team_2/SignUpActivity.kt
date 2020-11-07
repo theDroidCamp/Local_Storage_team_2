@@ -23,6 +23,13 @@ class SignUpActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
+        binding.btnLogin.setOnClickListener {
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
         name_et = binding.nameEt
         email_address_et = binding.emailAddressEt
         school_name_et = binding.schoolNameEt
@@ -65,10 +72,10 @@ class SignUpActivity : AppCompatActivity() {
 
                 editor.apply()
 
-                Toast.makeText(this, "Sign up successful", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Sign up successful, please login", Toast.LENGTH_LONG).show()
 
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
+//                val intent = Intent(this, LoginActivity::class.java)
+//                startActivity(intent)
+//                finish()
             }
 }

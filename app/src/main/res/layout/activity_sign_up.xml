@@ -82,7 +82,19 @@
                 android:fontFamily="@font/roboto_thin"
                 android:hint="@string/password_hint"
                 android:inputType="textPassword"/>
-            </com.google.android.material.textfield.TextInputLayout>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/login_btn"
+            android:background="@drawable/button_rounded_corner"
+            android:layout_gravity="center_horizontal"/>
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSignUp"
@@ -93,6 +105,6 @@
             android:background="@drawable/button_rounded_corner"
             android:layout_gravity="center_horizontal"/>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
