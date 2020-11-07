@@ -51,7 +51,8 @@ class LoginActivity : AppCompatActivity() {
             val email = mypref.getString("email", "")
             val password = mypref.getString("password", "")
 
-            if (email!! == binding.emailAddressEt.text.toString() && password!! == binding.passwordEt.text.toString()) {
+            if (email!! == binding.emailAddressEt.text.toString() &&
+                    password!! == binding.passwordEt.text.toString()) {
                     startActivity(Intent(this, LogoutActivity::class.java))
                     finish()
             } else {
