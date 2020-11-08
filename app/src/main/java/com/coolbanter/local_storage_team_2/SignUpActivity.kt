@@ -54,10 +54,7 @@ class SignUpActivity : AppCompatActivity() {
                     emailAddress.error = "Please enter your email address"
                     return
                 }
-                 if (emailAddress.text.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailAddress.toString()).matches()){
-                     emailAddress.error = "Improper email address"
-                     return
-                 }
+                 
                 if (schoolName.text.isEmpty()) {
                     schoolName.error = "Please enter the name of your school"
                     return
