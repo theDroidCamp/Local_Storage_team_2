@@ -65,7 +65,9 @@ class SignUpActivity : AppCompatActivity() {
                     return
                 }
 
-                 // This will check if valid email pattern is followed, else it will return
+                 if (!Patterns.EMAIL_ADDRESS.matcher(emailAddress.text.toString()).matches()) {
+                     emailAddress.error = "not a valid email!"
+                 }
 
 
 
@@ -74,9 +76,11 @@ class SignUpActivity : AppCompatActivity() {
                 val editor = mypref.edit()
 
                  if (name.text.toString().isNotEmpty() &&
-                         emailAddress.text.toString().isNotEmpty() &&
+                         emailAddress.text.isNotEmpty() &&
+                         Patterns.EMAIL_ADDRESS.matcher(emailAddress.text.toString()).matches() &&
                          schoolName.text.toString().isNotEmpty() &&
                          password.text.toString().isNotEmpty()) {
+
 
                      editor.putString("name", name.text.toString())
                      editor.putString("email", emailAddress.text.toString())
