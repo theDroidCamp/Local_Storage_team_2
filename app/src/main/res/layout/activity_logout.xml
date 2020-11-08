@@ -34,6 +34,7 @@
         android:fontFamily="@font/roboto_bold"
         android:gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/email_tv"
         app:layout_constraintStart_toEndOf="@id/avatar"
         app:layout_constraintTop_toBottomOf="@id/user_details_tv">
 
@@ -43,11 +44,13 @@
         android:id="@+id/email_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="13dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="502dp"
         android:fontFamily="@font/roboto_bold"
         android:gravity="center_vertical"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/school_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/mail_box"
         app:layout_constraintTop_toBottomOf="@id/name_tv">
@@ -58,13 +61,13 @@
         android:id="@+id/school_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/roboto_bold"
         android:gravity="center_vertical"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/school_icon"
+        app:layout_constraintStart_toEndOf="@+id/school_icon"
         app:layout_constraintTop_toBottomOf="@id/email_tv">
 
     </com.google.android.material.textview.MaterialTextView>
@@ -96,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/avatar"
         app:srcCompat="@drawable/ic_baseline_mail_24" />
@@ -106,7 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mail_box"
         app:srcCompat="@drawable/ic_baseline_school_24" />
