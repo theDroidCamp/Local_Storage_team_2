@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.EditText
 import android.widget.Toast
 import com.coolbanter.local_storage_team_2.databinding.ActivitySignUpBinding
@@ -53,6 +54,7 @@ class SignUpActivity : AppCompatActivity() {
                     emailAddress.error = "Please enter your email address"
                     return
                 }
+                 
                 if (schoolName.text.isEmpty()) {
                     schoolName.error = "Please enter the name of your school"
                     return
@@ -62,6 +64,10 @@ class SignUpActivity : AppCompatActivity() {
                     password.error = "Please enter password"
                     return
                 }
+
+                 // This will check if valid email pattern is followed, else it will return
+
+
 
                 val  mypref = getSharedPreferences("mypref", Context.MODE_PRIVATE)
 
@@ -86,11 +92,6 @@ class SignUpActivity : AppCompatActivity() {
 
 
 
-//                val intent = Intent(this, LoginActivity::class.java)
-//                startActivity(intent)
-//                finish()
-            }
 
-//
-//    }
+            }
 }
