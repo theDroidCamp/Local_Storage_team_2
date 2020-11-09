@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Patterns
 import android.widget.EditText
 import android.widget.Toast
@@ -40,11 +41,27 @@ class SignUpActivity : AppCompatActivity() {
 
 
         binding.btnSignUp.setOnClickListener {
+            isValidEmail()
             saveData()
 
 
         }
     }
+
+    private fun isValidEmail() {
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailAddress.toString()).matches()){
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show()
+        return
+        }
+    }
+
+//    private fun isValidEmail(emailAddress: String) {
+//        if (!Patterns.EMAIL_ADDRESS.matcher(emailAddress.toString()).matches()) {
+//            Toast.makeText(this, "Invalid email address", Toast.LENGTH_LONG).show()
+//        }else {
+//            return
+//        }
+//    }
              private fun saveData() {
                 if (name.text.isEmpty()) {
                     name.error = "Please enter your name"
