@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
 import android.widget.Toast
 import com.coolbanter.local_storage_team_2.databinding.ActivityLoginBinding
 
@@ -12,7 +11,6 @@ import com.coolbanter.local_storage_team_2.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLoginBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -20,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(view)
 
 
-
+            
         
 
       binding.btnLogin.setOnClickListener {
@@ -37,18 +35,15 @@ class LoginActivity : AppCompatActivity() {
         //To save data with shared preference
     private fun saveData() {
             //If field is empty will show (Input email address)
-                if (binding.emailAddressEt.text!!.isEmpty()) {
-                    binding.emailAddressEt.error = "Input your email address!!"
-                    return
-                }
-
-
-
-                //If field is empty will show (Password is empty)
-                if (binding.passwordEt.text!!.isEmpty()) {
-                    binding.passwordEt.error = "Password is empty!"
-                    return
-                }
+            if (binding.emailAddressEt.text!!.isEmpty()) {
+                binding.emailAddressEt.error = "Input your email address!!"
+                return
+            }
+            //If field is empty will show (Password is empty)
+            if (binding.passwordEt.text!!.isEmpty()) {
+                binding.passwordEt.error = "Password is empty!"
+                return
+            }
 
 
             val mypref = getSharedPreferences("mypref", Context.MODE_PRIVATE)
@@ -58,26 +53,14 @@ class LoginActivity : AppCompatActivity() {
 
             if (email!! == binding.emailAddressEt.text.toString() &&
                     password!! == binding.passwordEt.text.toString()) {
-                    startActivity(Intent(this, LogoutActivity::class.java))
-                    finish()
+                startActivity(Intent(this, LogoutActivity::class.java))
+                finish()
             } else {
-                Toast.makeText(this, "incorrect email or password", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Incorrect email or password!", Toast.LENGTH_LONG).show()
             }
 
-//            val editor = mypref.edit()
-//
-//
-//            editor.putString("email", binding.emailAddressEt.text.toString())
-//            editor.putString("password", binding.emailAddressEt.text.toString())
-//            editor.apply()
+        }
 
-
-    }
-            //To retrieve data with shared prefer
-//    private fun retrievedata() {
-//        val mypref = getSharedPreferences("mypref", Context.MODE_PRIVATE)
-//    }
-    
 
 
 
