@@ -2,17 +2,16 @@ package com.coolbanter.local_storage_team_2
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.coolbanter.local_storage_team_2.databinding.ActivitySignUpBinding
 
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySignUpBinding
-
     private lateinit var name: EditText
     private lateinit var emailAddress: EditText
     private lateinit var schoolName: EditText
@@ -23,8 +22,6 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-
 
 
         binding.btnLogin.setOnClickListener {
@@ -38,14 +35,13 @@ class SignUpActivity : AppCompatActivity() {
         password = binding.passwordEt
 
 
-
         binding.btnSignUp.setOnClickListener {
             saveData()
 
-
         }
     }
-             private fun saveData() {
+
+         private fun saveData() {
                 if (name.text.isEmpty()) {
                     name.error = "Please enter your name"
                     return
@@ -91,11 +87,6 @@ class SignUpActivity : AppCompatActivity() {
                      startActivity(Intent(this, LoginActivity::class.java))
                      Toast.makeText(this, "Sign up successful, please login", Toast.LENGTH_LONG).show()
                  }
-
-
-
-
-
 
             }
 }
