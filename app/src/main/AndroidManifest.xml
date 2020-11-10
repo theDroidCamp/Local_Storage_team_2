@@ -9,19 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Local_Storage_team_2">
-
-        <activity android:name=".LogoutActivity"
-            android:parentActivityName=".LoginActivity"/>
-        <activity android:name=".SignUpActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LogoutActivity"
+            android:parentActivityName=".LoginActivity" />
+        <activity
+            android:name=".SignUpActivity">
+        </activity>
+        <activity
+            android:name=".LoginActivity"
             android:parentActivityName=".SignUpActivity">
-
         </activity>
     </application>
 
