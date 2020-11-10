@@ -10,4 +10,7 @@
     <string name="login_btn">Login</string>
     <string name="name_hint">Name</string>
     <string name="school_hint">School</string>
+    <string name="welcome_to_team">Welcome to TEAM 2 Shared Preferences project application.</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

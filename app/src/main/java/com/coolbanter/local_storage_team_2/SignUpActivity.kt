@@ -11,6 +11,8 @@ import com.coolbanter.local_storage_team_2.databinding.ActivitySignUpBinding
 
 
 class SignUpActivity : AppCompatActivity() {
+
+    // Initialization of variables
     private lateinit var binding : ActivitySignUpBinding
     private lateinit var name: EditText
     private lateinit var emailAddress: EditText
